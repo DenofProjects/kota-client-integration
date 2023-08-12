@@ -5,7 +5,12 @@ const cors = require('cors');
 const app = express();
 const XLSX = require('xlsx');
 
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    // origin: "http://13.233.184.159/", 
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,7 +30,7 @@ function createExcelFile(data, fileName) {
 
 
 
-app.post('/sendEmail', upload.single('attachment'), (req, res) => {
+app.post('/api/v1/sendEmail', upload.single('attachment'), (req, res) => {
     // const { to, subject, text } = req.body;
     // console.log(req);
     console.log("request recieved : ", JSON.stringify(req.body));
@@ -50,7 +55,7 @@ app.post('/sendEmail', upload.single('attachment'), (req, res) => {
         });
 });
 
-app.get('/health', (req, res) => {
+app.get('/api/v1/health', (req, res) => {
     res.status(200).json({ status: 'ok', message: 'Server is running correctly' });
 });
 
