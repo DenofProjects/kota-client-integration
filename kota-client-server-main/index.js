@@ -78,7 +78,7 @@ async function sendEmailWithAttachment(excelFile) {
         // Define the email options
         const mailOptions = {
             from: 'unsecure.verma.rahul@gmail.com', // Sender email address
-            to: 'rahul.mrrv@gmail.com', // Recipient email address
+            to: 'Poojakumarimeena1006@gmail.com', // Recipient email address
             subject: 'Excel File Attachment',
             text: 'The Excel file is attached.',
             attachments: [
