@@ -76,19 +76,23 @@ const TextFieldCreator = (props: any) => {
       return (
         <div>
           <div style={{ display: "flex", marginBottom: "5px" }}>
-            <div style={{ width: "40px", textAlign: "center", fontWeight: "bold" }}>
-              {"Row"}
+            <div style={{ width: "40px" }}>
+              <div style={{ width: "40px" }}>
+                {"Row"}
+              </div>
             </div>
             {columnHeaders.map((header, colIndex) => (
-              <div key={colIndex} style={{ width: "100px", textAlign: "center", fontWeight: "bold" }}>
-                {String.fromCharCode(65 + colIndex)} {/* Convert numeric index to alphanumeric */}
+              <div style={{ width: "107.2px" }}>
+                <div key={colIndex} style={{ width: "107.2px", textAlign: "center", fontWeight: "bold" }}>
+                  {String.fromCharCode(65 + colIndex)} {/* Convert numeric index to alphanumeric */}
+                </div>
               </div>
             ))}
           </div>
 
           {data.map((row: any, rowIndex: number) => (
-            <div key={rowIndex} style={{ display: "flex", marginBottom: "5px" }}>
-              <div style={{ width: "40px", textAlign: "center", paddingRight: "10px" }}>{rowIndex + 1}</div> {/* Row index */}
+            <div key={rowIndex} style={{ display: "flex" }}>
+              <div style={{ width: "100px" }}><div style={{ width: "40px", textAlign: "center" }}>{rowIndex + 1}</div> {/* Row index */}</div>
               {columnHeaders.map((header, colIndex) => (
                 <input
                   key={colIndex}
